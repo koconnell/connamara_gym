@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Field1:</b>
+  <%= @dummy_record.field1 %>
+</p>
+
+<p>
+  <b>Field2:</b>
+  <%= @dummy_record.field2 %>
+</p>
+
+<p>
+  <b>Id:</b>
+  <%= @dummy_record.id %>
+</p>
+
+
+<%= link_to 'Edit', edit_dummy_record_path(@dummy_record) %> |
+<%= link_to 'Back', dummy_records_path %>

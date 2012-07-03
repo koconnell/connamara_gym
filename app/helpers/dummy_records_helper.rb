@@ -1,0 +1,2 @@
+module DummyRecordsHelper
+end

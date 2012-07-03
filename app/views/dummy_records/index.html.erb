@@ -1,0 +1,27 @@
+<h1>Listing dummy_records</h1>
+
+<table>
+  <tr>
+    <th>Field1</th>
+    <th>Field2</th>
+    <th>Id</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @dummy_records.each do |dummy_record| %>
+  <tr>
+    <td><%= dummy_record.field1 %></td>
+    <td><%= dummy_record.field2 %></td>
+    <td><%= dummy_record.id %></td>
+    <td><%= link_to 'Show', dummy_record %></td>
+    <td><%= link_to 'Edit', edit_dummy_record_path(dummy_record) %></td>
+    <td><%= link_to 'Destroy', dummy_record, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Dummy record', new_dummy_record_path %>

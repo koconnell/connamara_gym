@@ -1,7 +1,5 @@
 GenericRails::Application.routes.draw do
 
-  resources :dummy_records
-
   root :to => 'dummy_records#index'
 
 

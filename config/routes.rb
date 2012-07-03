@@ -1,6 +1,7 @@
 GenericRails::Application.routes.draw do
 
-  root :to => 'dummy_records#index'
+
+  #root :to => 'dummy_records#index'
 
 
   # The priority is based upon order of creation:

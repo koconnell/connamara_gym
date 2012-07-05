@@ -28,6 +28,7 @@ group :test, :postgres_test, :development do
 #  gem 'json_spec'
 #  gem 'selenium-webdriver', '~> 2.22.0'
 #  gem 'headless'
+  gem 'capybara'
 end
 
 

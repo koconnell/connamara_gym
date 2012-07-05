@@ -1,11 +1,12 @@
 require 'spec_helper'
 
 describe "DummyRecords" do
-  describe "GET /dummy_records" do
-    it "works! (now write some real specs)" do
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      get dummy_records_path
-      response.status.should be(200)
+
+  describe "index page" do
+    it "should say 'Listing dummy_records'" do
+      visit '/dummy_records'
+      page.should have_content('Listing dummy_records')
     end
   end
+
 end

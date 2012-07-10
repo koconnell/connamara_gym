@@ -12,6 +12,11 @@ gem 'trinidad'
 gem 'trinidad_logging_extension'
 gem 'trollop'
 
+group :test do
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
+end
+
 group :test, :development do
   gem 'activerecord-jdbcsqlite3-adapter'
 end

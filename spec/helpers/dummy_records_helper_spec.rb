@@ -11,5 +11,5 @@ require 'spec_helper'
 #   end
 # end
 describe DummyRecordsHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  pending "placeholder for tests on #{__FILE__}"
 end

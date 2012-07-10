@@ -15,6 +15,8 @@ What you need
   * JRuby 1.7 is set to 1.9 by default
 * sqlite3, which is used for development mode
 
+**Note:** On Linux, we've had some "stack level too deep" errors when running Rake on JRuby 1.6.7.  Upgrading to 1.6.7**.2** fixed them.
+
 Setup
 =====
 * `gem install bundler` if not already installed

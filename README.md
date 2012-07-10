@@ -24,7 +24,7 @@ Setup
 To run tests
 ================
 * `bundle exec rake test:units` for unit tests (in test/unit)
-* `bundle exec rake rspec` for rspec tests (in spec/)
+* `bundle exec rake spec` for rspec tests (in spec/)
 
 To run the server
 =================

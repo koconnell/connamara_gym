@@ -3,8 +3,11 @@ GenericRails::Application.routes.draw do
 
   resources :dummy_records
 
+  get 'dummy_records/index'
+
   #root :to => 'dummy_records#index'
 
+  get "home" => 'dummy_records#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

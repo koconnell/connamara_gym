@@ -90,3 +90,4 @@ $underscore_files.each {|f|
 
 puts
 puts "Renamification complete."
+puts "You can delete this script from your forked repo now."

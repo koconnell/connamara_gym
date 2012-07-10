@@ -19,8 +19,19 @@ What you need
 
 Setup
 =====
+
+Gems:
+
 * `gem install bundler` if not already installed
 * `bundle install`
+
+Rename the project (because you don't want it to be GenericRails):
+
+* `rename_generic_project.rb -c "MyProjName" -u "my_proj_name"`
+  * You can delete this script from your forked repo after this.
+
+Create the database:
+
 * `rake db:migrate`
 
 To run tests

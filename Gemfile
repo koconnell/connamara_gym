@@ -12,23 +12,18 @@ gem 'trinidad'
 gem 'trinidad_logging_extension'
 gem 'trollop'
 
-group :test do
-  gem 'cucumber-rails', :require => false
-  gem 'database_cleaner'
-end
-
 group :test, :development do
   gem 'activerecord-jdbcsqlite3-adapter'
 end
 
-group :production_rackspace, :production, :postgres_test do
+group :production, :postgres_test do
   gem 'activerecord-jdbcpostgresql-adapter'
 end
 
 group :test, :postgres_test, :development do
-#  gem 'cucumber-rails', '1.1.1', :require => false
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
   gem "rspec-rails"
-#  gem 'database_cleaner'
 #  gem 'httparty'
 #  gem 'json_spec'
 #  gem 'selenium-webdriver', '~> 2.22.0'

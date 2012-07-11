@@ -32,6 +32,7 @@ Rename the project (because you don't want it to be GenericRails):
 
 Create the database:
 
+* `rake db:create`
 * `rake db:migrate`
 
 To run tests

@@ -3,6 +3,29 @@ require 'trollop'
 $old_name_cc = "GenericRails"
 $old_name_u = "generic_rails"
 
+$camel_case_files = [
+  "app/views/layouts/application.html.erb",
+  "config/application.rb",
+  "config/environment.rb",
+  "config/environments/development.rb",
+  "config/environments/production.rb",
+  "config/environments/test.rb",
+  "config/environments/postgres_test.rb",
+  "config/initializers/secret_token.rb",
+  "config/initializers/session_store.rb",
+  "config/routes.rb",
+  "config.ru",
+  "Rakefile",
+]
+
+$underscore_files = [
+  "config/initializers/session_store.rb",
+  "config/database.yml",
+]
+
+
+
+
 
 opts = Trollop::options do
   banner <<-EOS
@@ -47,23 +70,6 @@ unless opts.force
 end
 
 
-$camel_case_files = [
-  "app/views/layouts/application.html.erb",
-  "config/application.rb",
-  "config/environment.rb",
-  "config/environments/development.rb",
-  "config/environments/production.rb",
-  "config/environments/test.rb",
-  "config/initializers/secret_token.rb",
-  "config/initializers/session_store.rb",
-  "config/routes.rb",
-  "config.ru",
-  "Rakefile",
-]
-
-$underscore_files = [
-  "config/initializers/session_store.rb",
-]
 
 
 STDOUT.sync #flush io steam after every write/print/puts

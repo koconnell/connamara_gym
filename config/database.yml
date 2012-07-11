@@ -15,6 +15,13 @@ test: &test
   adapter: sqlite3
   database: db/test.sqlite3
 
+postgres_test:
+  adapter: postgresql
+  encoding: unicode
+  database: generic_rails_test
+  username: postgres
+  password:
+
 production:
   adapter: sqlite3
   database: db/production.sqlite3

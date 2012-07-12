@@ -63,12 +63,9 @@ account, but Github doesn't really let us do a Connamara-to-Connamara fork.
   * `cd ..`
   * `rm -Rf generic_rails` (yep, just blow it all away)
   * `git clone git@github.com/connamara/new_rails_proj.git`
-
-But wait, one more thing -- Rails still thinks your project is called "GenericRails".  Let's rename it:
-
-* `rename_generic_project.rb -c "NewRailsProj" -u "new_rails_proj"`
-
-(You can delete that script from your new repo now.  You won't need it again.)
+* One more thing -- Rails still thinks your project is called "GenericRails".  Let's rename it:
+  * `rename_generic_project.rb -c "NewRailsProj" -u "new_rails_proj"`
+  * (You can delete that script from your new repo now.  You won't need it again.)
 
 You're ready to start hacking!  But first, you should probably set up a Jenkins for your new project.
 

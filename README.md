@@ -1,9 +1,11 @@
-This is to be a iteration-0 ready generic Rails project.
-When complete, you should be able to create a fork, 
-change some details, and have a fully-ready rails app to
-start hacking on.
+This is an iteration-0-ready generic Rails project.
+You can create a fork, change some details, and have a fully-ready rails app to
+start writing tests and code for.
 
-Going by what was successful in previous works, this project is using JRuby, Tomcat, and Postgres.
+You can even copy this project's Jenkins configuration, giving you a fully-functional
+build-test server before you even start writing code.
+
+Going by what was successful in previous projects, this project is using JRuby, Tomcat, and Postgres.
 
 What you need
 =============
@@ -51,7 +53,7 @@ Certainly you can fork into your personal Github account, but that's
 not really appropriate for a customer project.  We want it under Connamara's
 account, but Github doesn't really let us do a Connamara-to-Connamara fork.
 
-* Create your new Connamara repo on Github (here we'll call it `new_rails_proj`)
+* Have an admin create your new Connamara repo on Github (here we'll call it `new_rails_proj`)
 * On your local dev machine:
   * `git clone git@github.com/connamara/generic_rails.git`
   * `cd generic_rails`
@@ -62,10 +64,27 @@ account, but Github doesn't really let us do a Connamara-to-Connamara fork.
   * `rm -Rf generic_rails` (yep, just blow it all away)
   * `git clone git@github.com/connamara/new_rails_proj.git`
 
-But wait, one more thing: Rails still thinks your project is called "GenericRails".  Let's rename it:
+But wait, one more thing -- Rails still thinks your project is called "GenericRails".  Let's rename it:
 
 * `rename_generic_project.rb -c "NewRailsProj" -u "new_rails_proj"`
 
 (You can delete that script from your new repo now.  You won't need it again.)
 
-Now you're good to go.
+You're ready to start hacking!  But first, you should probably set up a Jenkins for your new project.
+
+
+Set up a Jenkins builder
+============================
+
+* Make sure the "buildbot" user has access to your new repo (ask an admin)
+* Go to http://jenkins.connamara.com
+* On the left, click "New Job"
+  * Select "Copy existing job", enter "generic_rails" in the "Copy from" field
+  * Click "OK"
+* In the configuration page for your new builder:
+  * Change the GitHub project URL (near the top)
+  * Change the Repository URL (under "Source Code Management")
+  * Change the email recipients
+  * Click "Save"
+
+Force a build to make sure it works.

@@ -36,6 +36,7 @@ Run tests:
 
 * `bundle exec rake test:units` for unit tests (in test/unit)
 * `bundle exec rake spec` for rspec tests (in spec/)
+* `bundle exec cucumber` for cucumber tests
 
 Run the web server:
 

@@ -65,4 +65,6 @@ But wait, one more thing: Rails still thinks your project is called "GenericRail
 
 * `rename_generic_project.rb -c "NewRailsProj" -u "new_rails_proj"`
 
+(You can delete that script from your new repo now.  You won't need it again.)
+
 Now you're good to go.

@@ -15,17 +15,27 @@ What you need
   * You can set `JRUBY_OPTS=--1.9` in your environment
   * You can set `compat.version=1.9` in your ~/.jrubyrc file
   * JRuby 1.7 is set to 1.9 by default
-* sqlite3 for development environment
-* postgres for postgres\_test environment
+* postgres
 
 **Note:** On Linux, we've had some "stack level too deep" errors when running Rake on JRuby 1.6.7.  Upgrading to 1.6.7**.2** fixed them.
+
+NOTE: We don't use SQLite
+-------------------------
+
+Using SQLite for development is not recommended, and thus this project does not support it.  Among the reasons:
+
+* SQLite treats booleans differently, which can cause your code to act differently than with Postgres
+* SQLite [doesn't allow you to delete/modify columns](http://www.sqlite.org/faq.html#q11) in a table
+* There isn't really any good reason to use a different DB in dev than production
+* Postgres isn't that hard to install! [(Mac help)](http://blog.private.connamara.com/2012/11/13/installing-postgresql-on-a-mac/) [(Jenkins help)](http://wiki.private.connamara.com/index.php?title=Jenkins#Shortcuts_for_upgrading_postgresql)
 
 
 Set up and operation
 ====================
 
-To use sqlite3: no action needed.  
-To use postgres: set `RAILS_ENV=postgres_test` in your shell environment.
+First thing:
+
+* `rvm jruby`
 
 Setup:
 

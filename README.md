@@ -19,8 +19,7 @@ What you need
 
 **Note:** On Linux, we've had some "stack level too deep" errors when running Rake on JRuby 1.6.7.  Upgrading to 1.6.7**.2** fixed them.
 
-NOTE: We don't use SQLite
--------------------------
+### NOTE: We don't use SQLite
 
 Using SQLite for development is not recommended, and thus this project does not support it.  Among the reasons:
 

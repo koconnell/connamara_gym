@@ -1,4 +1,6 @@
+<% if notice %>
 <p id="notice"><%= notice %></p>
+<% end %>
 
 <p>
   <b>ID:</b> <%= @dummy_record.id %>
@@ -15,5 +17,7 @@
 </p>
 
 
+<p>
 <%= link_to 'Edit', edit_dummy_record_path(@dummy_record) %> |
 <%= link_to 'Back', dummy_records_path %>
+</p>

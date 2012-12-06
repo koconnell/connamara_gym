@@ -1,13 +1,15 @@
 GenericRails::Application.routes.draw do
 
+  root :to => 'home#index'
 
+  get "home" => "home#index", :as => "home"
   resources :dummy_records
+  resources :users
 
-  get 'dummy_records/index'
+  get "sign-in" => "sessions#new", :as => "sign_in"
+  get "sign-out" => "sessions#destroy", :as => "sign_out"
 
-  #root :to => 'dummy_records#index'
-
-  get "home" => 'dummy_records#index'
+  resources :sessions
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

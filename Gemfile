@@ -2,23 +2,15 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.6'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
+gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'cancan'
 gem 'jquery-rails'
 gem 'jruby-openssl'
 gem 'json'
 gem 'trinidad'
 gem 'trinidad_logging_extension'
 gem 'trollop'
-
-group :test, :development do
-  gem 'activerecord-jdbcsqlite3-adapter'
-end
-
-group :production, :postgres_test do
-  gem 'activerecord-jdbcpostgresql-adapter'
-end
+gem 'activerecord-jdbcpostgresql-adapter'
 
 group :test, :postgres_test, :development do
   gem 'cucumber-rails', :require => false
@@ -49,9 +41,6 @@ end
 
 #======================
 # this stuff here is in Rails' default Gemfile
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'

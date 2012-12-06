@@ -1,0 +1,54 @@
+<div style="background-color: #ddddff; padding: 10px; margin: 10px auto 10px auto; auto; width: 400px;">
+<p>You are a <b><%=current_user.role%></b>, and can do the following:</p>
+
+<ul>
+
+<% if current_user.role == User::Role::Admin %>
+<li>manage <%=link_to("users",users_path)%></li>
+<li>manage <%=link_to("dummy records",dummy_records_path)%></li>
+<% end %>
+
+<% if current_user.role == User::Role::AdvancedUser %>
+<li>manage <%=link_to("dummy records",dummy_records_path)%></li>
+<% end %>
+
+<% if current_user.role == User::Role::BasicUser %>
+<li>read-only access to <%=link_to("dummy records",dummy_records_path)%></li>
+<% end %>
+
+</ul>
+</div>
+
+
+
+
+<div style="padding: 20px;">
+<h2>This is your generic project</h2>
+
+<p>Here you are.  Check out the README.md file to see where to go from here.</p>
+
+<p><a href="rails/info/properties/">Here's your system's properties</a>, if you are curious.</a></p>
+
+<p>This starter project has full user login support with multiple roles,
+and one table called "Dummy Records".</p>
+
+<p>The 3 user role are:</p>
+<ul>
+<li><b>Admin</b> - Can <abbr title="create/read/update/delete">CRUD</abbr> users and dummy records</li>
+<li><b>AdvancedUser</b> - Can <abbr title="create/read/update/delete">CRUD</abbr> dummy records</li>
+<li><b>BasicUser</b> - Can view dummy records only</li>
+</ul>
+
+<p>Here's some docs:</p>
+<ul>
+<li><a href="http://guides.rubyonrails.org/">Rails Guides</a></li>
+<li><a href="http://api.rubyonrails.org/">Rails API</a></li>
+<li><a href="http://www.ruby-doc.org/core/">Ruby core</a></li>
+<li><a href="http://www.ruby-doc.org/stdlib/">Ruby standard library</a></li>
+</ul>
+
+<p>Go to it.</p>
+</div>
+
+
+

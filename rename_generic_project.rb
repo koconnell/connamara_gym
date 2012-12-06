@@ -44,11 +44,11 @@ EOS
 end
 
 
-def cc_check(name)
+def camel_case_check(name)
   name.match("[A-Z]") && name.match("[a-z]") && !name.match("[_-]")
 end
 
-def u_check(name)
+def underscore_check(name)
   !name.match("[A-Z]") && !name.match("-")
 end
 
@@ -56,10 +56,10 @@ unless opts.force
   puts
   puts "*** Checking formats of names (use --force to skip)"
 
-  cc_ok = cc_check(opts.camel_case_name)
+  cc_ok = camel_case_check(opts.camel_case_name)
   puts "Red flag: Camel-case name '#{opts.camel_case_name}' doesn't look right." unless cc_ok
 
-  u_ok = u_check(opts.underscore_name)
+  u_ok = underscore_check(opts.underscore_name)
   puts "Red flag: Underscore name '#{opts.underscore_name}' doesn't look right." unless u_ok
 
   if cc_ok and u_ok

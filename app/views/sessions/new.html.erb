@@ -1,0 +1,32 @@
+<% if @login_error %>
+<div id="login-error" class="alert alert-error">
+  <%= @login_error %>
+</div>
+<% end %>
+
+<div class="row">
+  <div id="home-login">
+    <%= form_tag sessions_path do %>
+
+      <p>
+      <%= label_tag :username, "Username" %>
+      <%= text_field_tag :username, params[:username], :maxlength => 25, :class => "userid" %>
+      </p>
+
+      <p>
+      <%= label_tag :password %>
+      <%= password_field_tag :password, nil, :maxlength => 25, :class => "password" %>
+      </p>
+   
+      <p>
+        <button type="submit" class="btn btn-primary btn-small">LOG IN <i class="icons-arrow white"></i></button>
+        <label for="remember_me" class="checkbox inline">
+          <%= check_box_tag :remember_me, 1, params[:remember_me] %> Remember me
+        </label>
+      </p>
+
+      <%= link_to "Forgot Password?", "tba", :class=>"underline" %>
+    <% end %>
+  </div>
+</div>
+

@@ -7,7 +7,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: generic_rails_test
+  database: generic_rails_dev
   username: postgres
   password:
 
@@ -21,17 +21,10 @@ test: &test
   username: postgres
   password:
 
-postgres_test:
-  adapter: postgresql
-  encoding: unicode
-  database: generic_rails_test
-  username: postgres
-  password:
-
 production:
   adapter: postgresql
   encoding: unicode
-  database: generic_rails_test
+  database: generic_rails_prod
   username: postgres
   password:
 

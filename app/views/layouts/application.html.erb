@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>GenericRails</title>
+  <title>GenericRails<%=" - #{@pagetitle}" if @pagetitle%></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<h1 class="site title">GenericRails</h1>
+<% if current_user %>
+<div class="login_display">
+<span><%= current_user.username %></b> | <%= link_to('Log Out', sign_out_path) %>
+</div>
+<% end %>
+
+<%- flash.each do |k, v| %>
+  <p id="<%= k %>"><%= v %></p>
+<% end %>
 
 <%= yield %>
 

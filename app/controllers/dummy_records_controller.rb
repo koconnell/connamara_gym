@@ -1,4 +1,6 @@
 class DummyRecordsController < ApplicationController
+  load_and_authorize_resource
+
   # GET /dummy_records
   # GET /dummy_records.json
   def index

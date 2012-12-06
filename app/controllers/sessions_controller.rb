@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil
     cookies.delete(:auth_token)
-    redirect_to root_url, :alert => "#{current_user.name} logged out."
+    redirect_to sign_in_path, :alert => "#{current_user.username} logged out."
   end
 
   def create

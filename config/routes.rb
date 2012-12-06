@@ -1,6 +1,8 @@
 GenericRails::Application.routes.draw do
 
-  root :to => 'home#index'
+  root :to => redirect("/home")
+  # Or if you don't like the redirect:
+  # root :to => 'home#index'
 
   get "home" => "home#index", :as => "home"
   resources :dummy_records

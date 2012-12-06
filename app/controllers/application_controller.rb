@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
       render :json => exception.message, :status => 403
     else
       flash[:alert] = "You do not have permission to access that page."
-      redirect_to root_url
+      redirect_to root_path
     end
   end
 

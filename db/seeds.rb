@@ -12,6 +12,7 @@ User.create!(
   :password=>"adminpass",
   :password_confirmation=>"adminpass",
   :email=>"admin@example.com",
+  :enabled=>true,
 )
 
 User.create!(
@@ -20,6 +21,7 @@ User.create!(
   :password=>"noobpass",
   :password_confirmation=>"noobpass",
   :email=>"noob@example.com",
+  :enabled=>true,
 )
 
 User.create!(
@@ -28,4 +30,5 @@ User.create!(
   :password=>"vetpass",
   :password_confirmation=>"vetpass",
   :email=>"vet@example.com",
+  :enabled=>true,
 )

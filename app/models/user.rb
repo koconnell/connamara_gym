@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :password_digest, :role, :username
-  attr_accessible :password, :password_confirmation # fields from from has_secure_password
+  attr_accessible :email, :password_digest, :role, :username, :enabled
+  attr_accessible :password, :password_confirmation # fields from has_secure_password
 
   module Role
     Admin = 'admin'

@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :role, :username, :enabled
   attr_accessible :password, :password_confirmation # fields from has_secure_password
 
+  # if you change the Roles, do a "grep -iR User::Role --include=*rb" to catch all the existing usages
   module Role
     Admin = 'admin'
     AdvancedUser = 'advanced_user'

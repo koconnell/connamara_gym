@@ -2,5 +2,8 @@
 
 <%= render 'form' %>
 
+<p>
 <%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<% dest = current_user.role==User::Role::Admin ? users_path : home_path %>
+<%= link_to 'Back', dest %>
+</p>

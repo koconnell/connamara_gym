@@ -30,8 +30,10 @@ class Ability
         can :manage, :all
       when User::Role::AdvancedUser
         can :manage, DummyRecord
+        can [:edit,:update,:show], User, :id => user.id
       when User::Role::BasicUser
         can [:index,:show], DummyRecord
+        can [:edit,:update,:show], User, :id => user.id
     end
   end
 end

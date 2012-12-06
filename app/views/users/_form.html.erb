@@ -21,6 +21,8 @@
     <%= f.label :username %><br />
     <%= f.text_field :username %>
   </div>
+
+<% if current_user.role==User::Role::Admin %>
   <div class="field">
     <%= f.label :role %><br />
     <% User::ROLES.each {|r| %>
@@ -28,14 +30,19 @@
     <%= f.label :role, r, :value=>r %>
     <% } %>
   </div>
+<% end %>
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.text_field :email %>
   </div>
+
+<% if current_user.role==User::Role::Admin %>
   <div class="field">
     <%= f.label :enabled %><br />
     <%= f.check_box :enabled %><br />
   </div>
+<% end %>
 
   <div class="field">
     <%= f.label :password %><br />

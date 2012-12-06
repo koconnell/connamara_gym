@@ -11,10 +11,12 @@
 
 <% if current_user.role == User::Role::AdvancedUser %>
 <li>manage <%=link_to("dummy records",dummy_records_path)%></li>
+<li>view/edit some of <%=link_to("your user properties",@current_user)%></li>
 <% end %>
 
 <% if current_user.role == User::Role::BasicUser %>
 <li>read-only access to <%=link_to("dummy records",dummy_records_path)%></li>
+<li>view/edit some of <%=link_to("your user properties",@current_user)%></li>
 <% end %>
 
 </ul>

@@ -60,6 +60,10 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
 
+    if current_user.role != User::Role::Admin && (params.has_key?(:role) || params.has_key?(:enabled))
+      raise "Illegal update attempt - user #{current_user.id}/#{current_user.username}: #{params.inspect}"
+    end
+
     respond_to do |format|
       if @user.update_attributes(params[:user])
         format.html { redirect_to @user, notice: 'User was successfully updated.' }

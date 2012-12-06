@@ -24,5 +24,6 @@
 
 <p>
 <%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<% dest = current_user.role==User::Role::Admin ? users_path : home_path %>
+<%= link_to 'Back', dest %>
 </p>

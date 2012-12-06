@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :password_digest, :role, :username, :enabled
+  attr_accessible :email, :role, :username, :enabled
   attr_accessible :password, :password_confirmation # fields from has_secure_password
 
   module Role
@@ -22,7 +22,6 @@ class User < ActiveRecord::Base
 
   before_validation :clean_fields
   validates_presence_of :password, :on => :create
-  validates_presence_of :password_confirmation, :on => :create
   validates_presence_of :email, :on => :create
   validates_presence_of :username, :on => :create
   validates_uniqueness_of :username, :on => :create

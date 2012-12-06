@@ -21,7 +21,10 @@
   </div>
   <div class="field">
     <%= f.label :role %><br />
-    <%= f.text_field :role %>
+    <% User::ROLES.each {|r| %>
+    <%= f.radio_button :role, r %>
+    <%= f.label :role, r, :value=>r %>
+    <% } %>
   </div>
   <div class="field">
     <%= f.label :email %><br />
@@ -30,6 +33,16 @@
   <div class="field">
     <%= f.label :enabled %><br />
     <%= f.check_box :enabled %><br />
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password %><br />
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %><br />
   </div>
 
   <div class="actions">

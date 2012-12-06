@@ -22,6 +22,7 @@ class User < ActiveRecord::Base
 
   before_validation :clean_fields
   validates_presence_of :password, :on => :create
+  validates_presence_of :password_confirmation, :on => :create
   validates_presence_of :email, :on => :create
   validates_presence_of :username, :on => :create
   validates_uniqueness_of :username, :on => :create

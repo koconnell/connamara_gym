@@ -14,10 +14,9 @@ class SessionsController < ApplicationController
     user = User.find_by_username(params[:username])
 
     if user && user.enabled && user.authenticate(params[:password])
-#      user.check_and_create_admin_permissions
-#      if params[:remember_me]
-#        cookies.permanent[:auth_token] = user.auth_token
-#      end
+      if params[:remember_me]
+        cookies.permanent[:auth_token] = user.auth_token
+      end
       session[:user_id] = user.id
       if session[:return_to]
         path = session[:return_to]

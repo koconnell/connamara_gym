@@ -19,8 +19,8 @@ private
     user = nil
     if session[:user_id]
       user = User.find(session[:user_id])
-#    elsif cookies[:auth_token]
-#      user = User.find_by_auth_token!(cookies[:auth_token])
+    elsif cookies[:auth_token]
+      user = User.find_by_auth_token!(cookies[:auth_token])
     end
     @current_user ||= user
   rescue => e

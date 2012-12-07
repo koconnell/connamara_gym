@@ -29,6 +29,18 @@ class User < ActiveRecord::Base
   validates_presence_of :role, :on => :create
   validate :role_is_valid
 
+  after_create :after_create
+  after_save :after_save
+  before_create { generate_auth_token }
+
+
+  def generate_auth_token(save=false)
+    begin
+      self[:auth_token] = SecureRandom.urlsafe_base64
+    end while User.exists?(:auth_token => self[:auth_token])
+    self.save! if save
+  end
+
 
 private
   def role_is_valid
@@ -40,5 +52,10 @@ private
     username.strip! if username
   end
 
+  def after_create
+  end
+
+  def after_save
+  end
 
 end

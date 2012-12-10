@@ -29,6 +29,9 @@ private
   end
 
   def check_force_login
+    # If the user follows a link with "login=true" in it and is not logged in,
+    # they will be redirected to login and then after logging in will be redirected to the proper location.
+    # Such a link would probably come from email.
     if request.params["login"] and request.params["login"] == "true" and current_user.nil?
       session[:return_to] = request.fullpath.gsub("login=true", "")
       redirect_to '/sign-in'
@@ -38,7 +41,7 @@ private
   def check_for_login
     return if current_user
     p = request.path
-    unless p =~ /sign-in/  or p =~ /sign-up/  or p =~ /sessions/ or p =~ /users/ or p =~/ulrs/ or p=~/indications_of_interest/ or p=~/book/
+    unless p =~ /sign-in/  or p =~ /sign-up/  or p =~ /sessions/
       redirect_to '/sign-in'
     end
   end

@@ -13,9 +13,6 @@ GenericRails::Application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
 
-  # Don't care if the mailer can't send
-  config.action_mailer.raise_delivery_errors = false
-
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
 
@@ -34,4 +31,16 @@ GenericRails::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+
+  #========= Action mailer stuff ==============
+
+  # If :test, then emails won't be sent.
+  # Instead, they'll accumulate in the ActionMailer::Base.deliveries array.
+  # (comment it out to have emails be sent)
+  config.action_mailer.delivery_method = :test
+
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { :host => "localhost:3000" }
+
 end

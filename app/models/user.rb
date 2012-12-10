@@ -41,6 +41,14 @@ class User < ActiveRecord::Base
     self.save! if save
   end
 
+  def send_password_reset
+Rails.logger.info("send_password_reset")
+    self.password_reset_token = SecureRandom.urlsafe_base64
+    self.password_reset_sent_at = Time.zone.now
+    save!
+    UserMailer.password_reset(self).deliver
+  end
+
 
 private
   def role_is_valid

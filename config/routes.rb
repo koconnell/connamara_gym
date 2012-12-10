@@ -12,6 +12,7 @@ GenericRails::Application.routes.draw do
   get "sign-out" => "sessions#destroy", :as => "sign_out"
 
   resources :sessions
+  resources :password_resets
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

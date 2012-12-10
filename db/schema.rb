@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121207184700) do
+ActiveRecord::Schema.define(:version => 20121207233145) do
 
   create_table "dummy_records", :force => true do |t|
     t.string   "field1"
@@ -21,14 +21,16 @@ ActiveRecord::Schema.define(:version => 20121207184700) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "username",        :null => false
-    t.string   "email",           :null => false
+    t.string   "username",               :null => false
+    t.string   "email",                  :null => false
     t.string   "password_digest"
-    t.string   "role",            :null => false
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.string   "role",                   :null => false
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
     t.boolean  "enabled"
     t.string   "auth_token"
+    t.string   "password_reset_token"
+    t.datetime "password_reset_sent_at"
   end
 
   add_index "users", ["username"], :name => "idx_users_username", :unique => true

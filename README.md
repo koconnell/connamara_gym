@@ -42,6 +42,7 @@ Setup:
 * `bundle install`
 * `bundle exec rake db:create` to create db
 * `bundle exec rake db:migrate` to format db tables
+* `bundle exec rake db:seed` to seed with some basic demo data
 
 Run tests:
 
